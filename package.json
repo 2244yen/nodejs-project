@@ -1,0 +1,50 @@
+{
+  "name": "nodejs_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/bootstrap/server.js",
+  "dependencies": {
+    "@hapi/boom": "^9.1.4",
+    "@hapi/hapi": "^20.1.5",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/vision": "^6.1.0",
+    "agenda": "^4.2.1",
+    "assert": "^2.0.0",
+    "bcrypt": "^5.0.1",
+    "bull": "^3.29.0",
+    "dotenv": "^10.0.0",
+    "glob": "^7.1.7",
+    "hapi-auth-jwt2": "^10.2.0",
+    "ioredis": "^4.27.8",
+    "joi-objectid": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.7",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "@types/bull": "^3.15.4",
+    "@types/hapi__hapi": "^20.0.9",
+    "@types/hapi__inert": "^5.2.3",
+    "@types/hapi__joi": "^17.1.7",
+    "@types/hapi__vision": "^5.5.3",
+    "@types/node": "^16.6.1",
+    "concurrently": "^6.2.1",
+    "hapi-swagger": "^14.2.4",
+    "nodemon": "^2.0.12",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^4.3.5"
+  },
+  "scripts": {
+    "start": "nodemon -e ts  --exec \"npm run compile\"",
+    "compile": "tsc && node ./dist/bootstrap/server.js",
+    "watch": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run tsc-watch\" \"npm run watch-node\"",
+    "watch-node": "nodemon",
+    "tsc-watch": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC"
+}
